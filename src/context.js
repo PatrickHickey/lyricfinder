@@ -1,18 +1,20 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 
 const Context = React.createContext();
 
-// Test songs //
 export class Provider extends Component {
   state = {
-    track_lists: [
-      { track: { track_name: 'abc' } },
-      { track: { track_name: '123' } }
-    ],
+    track_lists: [],
     heading: 'Top 10 Tracks'
   };
 
-  componentDidMount() {}
+  componentDidMount() {
+    axios
+      .get(``)
+      .then(res => console.log(res.data))
+      .catch(err => console.log(err));
+  }
 
   render() {
     return (
